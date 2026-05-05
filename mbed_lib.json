@@ -1,0 +1,169 @@
+{
+    "name": "quectel-bc660kgl",
+    "config": {
+        "tx": {
+            "help": "TX pin for serial connection.",
+            "value": null
+        },
+        "rx": {
+            "help": "RX pin for serial connection. D0 assumed if Arduino Form Factor, needs to be set/overwritten otherwise.",
+            "value": null
+        },
+        "rts": {
+            "help": "RTS pin for serial connection",
+            "value": null
+        },
+        "cts": {
+            "help": "CTS pin for serial connection",
+            "value": null
+        },
+        "baudrate": {
+            "help": "Serial connection baud rate",
+            "value": 115200
+        },
+        "reset": {
+            "help": "Reset pin. Is triggered by setting the pin to active low for 50 ms",
+            "value": null
+        },
+        "boot": {
+            "help": "Boot pin. Make the module enter download mode.",
+            "value": null
+        },
+        "psm-exit": {
+            "help": "Interrupt pin. Wakes up the module from Deep/Light or Sleep mode. Is triggered by setting the pin to active low for 1 ms",
+            "value": null
+        },
+        "vdd-ext-ind": {
+            "help": "Input pin, monitors vdd ext to test if module i in deep-sleep mode.",
+            "value": null
+        },
+        "polarity": {
+            "help": "Pin polarity, 1 = Active high, 0 = Active low",
+            "value": null
+        },
+        "net": {
+            "help": "NET indicator pin.",
+            "value": null
+        },
+        "ri": {
+            "help": "RI (radio indicator) pin.",
+            "value": null
+        },
+        "provide-default": {
+            "help": "Provide as default CellularDevice [true/false]",
+            "value": false
+        },
+        "socket-count": {
+            "help": "Maximum number of sockets supported",
+            "value": 5
+        },
+        "configure": {
+            "help": "Configure and reboot the modem on initialization this will take 50s [true/false]",
+            "value": false
+        },
+        "bands": {
+            "help": "Comma-separated NB-IoT bands to enable (e.g. \"8,20\").",
+            "value": "\"8,20\""
+        },
+        "default-pdp-type": {
+            "help": "PDP type for the initial default bearer (CID 0). Many NB-IoT networks only support IPv4; requesting IPV4V6 causes ESM failure. Valid values: \"IP\", \"IPV6\", \"IPV4V6\".",
+            "value": null
+        },
+        "default-pdp-context-with-apn": {
+            "help": "If true, write nsapi.default-cellular-apn into AT+QCGDEFCONT so the bundled PDN Connectivity Request asks for that APN explicitly. If false (default), only the PDP type is written and the modem uses the SIM's HSS-subscribed APN. Requires default-pdp-type and nsapi.default-cellular-apn to be set.",
+            "value": false
+        },
+        "rssi": {
+            "help": "Use rssi dataprovider.",
+            "value": false
+        },
+        "rssi-history": {
+            "help": "Use rssi dataprovider history.",
+            "value": false
+        },
+        "get-op": {
+            "help": "Add op information in dataprovider.",
+            "value": false
+        },
+        "get-engineering-info": {
+            "help": "Add engineering info.",
+            "value": false
+        },
+        "engineering-rssi-sinr-add": {
+            "help": "Adds RSSI and SINR to the engineering info (engineering info has to be set to true).",
+            "value": false
+        },
+        "socket-buffer-chunk-size": {
+            "help": "Max payload bytes per socket buffer chunk (uint8_t, max 255).",
+            "value": 255
+        },
+        "socket-buffer-queue-depth": {
+            "help": "Number of chunk slots per socket buffer. Must hold at least one full DTLS flight (~7 records) plus retransmit headroom.",
+            "value": 24
+        }
+    },
+    "target_overrides": {
+        "*": {
+        },
+        "NUCLEO_L476RG": {
+            "quectel-bc660kgl.tx": "ARDUINO_UNO_D8",
+            "quectel-bc660kgl.rx": "ARDUINO_UNO_D2",
+            "quectel-bc660kgl.baudrate": 115200,
+            "quectel-bc660kgl.reset": "ARDUINO_UNO_D13",
+            "quectel-bc660kgl.psm-exit": "ARDUINO_UNO_D11",
+            "quectel-bc660kgl.polarity": 1,
+            "quectel-bc660kgl.boot": "ARDUINO_UNO_D12",
+            "quectel-bc660kgl.vdd-ext-ind": "NC",
+            "quectel-bc660kgl.ri": "ARDUINO_UNO_A0",
+            "quectel-bc660kgl.net": "NC"
+        },
+        "NUCLEO_L4A6ZG": {
+            "quectel-bc660kgl.tx": "ARDUINO_UNO_D1",
+            "quectel-bc660kgl.rx": "ARDUINO_UNO_D0",
+            "quectel-bc660kgl.baudrate": 115200,
+            "quectel-bc660kgl.reset": "ARDUINO_UNO_D13",
+            "quectel-bc660kgl.psm-exit": "ARDUINO_UNO_D11",
+            "quectel-bc660kgl.polarity": 1,
+            "quectel-bc660kgl.boot": "ARDUINO_UNO_D12",
+            "quectel-bc660kgl.vdd-ext-ind": "NC",
+            "quectel-bc660kgl.ri": "ARDUINO_UNO_A0",
+            "quectel-bc660kgl.net": "NC"
+        },
+        "NUCLEO_L496ZG": {
+            "quectel-bc660kgl.tx": "ARDUINO_UNO_D1",
+            "quectel-bc660kgl.rx": "ARDUINO_UNO_D0",
+            "quectel-bc660kgl.baudrate": 115200,
+            "quectel-bc660kgl.reset": "ARDUINO_UNO_D13",
+            "quectel-bc660kgl.psm-exit": "ARDUINO_UNO_D11",
+            "quectel-bc660kgl.polarity": 1,
+            "quectel-bc660kgl.boot": "ARDUINO_UNO_D12",
+            "quectel-bc660kgl.vdd-ext-ind": "NC",
+            "quectel-bc660kgl.ri": "ARDUINO_UNO_A0",
+            "quectel-bc660kgl.net": "NC"
+        },
+        "NUCLEO_L552ZE_Q": {
+            "quectel-bc660kgl.tx": "ARDUINO_UNO_D1",
+            "quectel-bc660kgl.rx": "ARDUINO_UNO_D0",
+            "quectel-bc660kgl.baudrate": 115200,
+            "quectel-bc660kgl.reset": "ARDUINO_UNO_D13",
+            "quectel-bc660kgl.psm-exit": "ARDUINO_UNO_D11",
+            "quectel-bc660kgl.polarity": 1,
+            "quectel-bc660kgl.boot": "ARDUINO_UNO_D12",
+            "quectel-bc660kgl.vdd-ext-ind": "NC",
+            "quectel-bc660kgl.ri": "ARDUINO_UNO_A0",
+            "quectel-bc660kgl.net": "NC"
+        },
+        "NUCLEO_U575ZI_Q": {
+            "quectel-bc660kgl.tx": "ARDUINO_UNO_D1",
+            "quectel-bc660kgl.rx": "ARDUINO_UNO_D0",
+            "quectel-bc660kgl.baudrate": 115200,
+            "quectel-bc660kgl.reset": "ARDUINO_UNO_D13",
+            "quectel-bc660kgl.psm-exit": "ARDUINO_UNO_D11",
+            "quectel-bc660kgl.polarity": 1,
+            "quectel-bc660kgl.boot": "ARDUINO_UNO_D12",
+            "quectel-bc660kgl.vdd-ext-ind": "NC",
+            "quectel-bc660kgl.ri": "ARDUINO_UNO_A0",
+            "quectel-bc660kgl.net": "NC"
+        }
+    }
+}
