@@ -154,6 +154,10 @@ bc660kgl/
 └── src/                       # matching .cpp files
 ```
 
+## Example app
+
+EVKIT example app that wires this driver to a target board: [mbed-ce-bc660kgl-app](https://github.com/61ca52/mbed-ce-bc660kgl-app)
+
 ## License
 
 Apache License 2.0. See `LICENSE`.
